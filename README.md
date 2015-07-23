@@ -11,7 +11,7 @@ The requirements for Rust Ssmtp:
 </ol>
 
 
-\* Note: These instructions assume a Ubuntu machine and the use of a gmail account. You can yous any smtp ready email account.
+\* Note: These instructions assume a Ubuntu machine and the use of a gmail account. You can use any smtp compatible email account.
 
 
 <h2>Step One</h2>
@@ -37,11 +37,19 @@ AuthMethod=LOGIN
 
 \* Note: Special charecters such as symbols will not work. Also dispable two step authentication.
 
-Test Commands:
+Test Command:
  ```
 ssmtp your.account@gmail.com
 Subject: Hello
 I am the body. World!
+```
+
+Another Test Command:
+```
+echo From: anything@email.com\n Subject: Hello\n I am the body. Wrold! > email.txt
+```
+```
+ssmtp your.account@gmail.com < email.txt
 ```
 
 
